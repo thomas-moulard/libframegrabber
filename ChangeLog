@@ -1,0 +1,43 @@
+2008-07-23  Thomas Moulard  <thomas@moulard.net>
+
+	Add FIXME file.
+	* FIXME: New.
+
+2008-07-23  Thomas Moulard  <thomas@moulard.net>
+
+	Initial import/.
+	* AUTHORS: New.
+	* ChangeLog: New.
+	* Makefile.am: New.
+	* NEWS: New.
+	* README: New.
+	* bootstrap: New.
+	* build-aux/autotest.mk: New.
+	* build-aux/boost.m4: New.
+	* build-aux/init.mk: New.
+	* build-aux/warning.m4: New.
+	* build-aux: New.
+	* configure.ac: New.
+	* doc/Doxyfile.in: New.
+	* doc/Makefile.am: New.
+	* doc: New.
+	* src/Makefile.am: New.
+	* src/doc.hh: New.
+	* src/libsettings-fwd.hh: New.
+	* src/libsettings-values.hh: New.
+	* src/libsettings-values.hxx: New.
+	* src/libsettings.hh: New.
+	* src/libsettings.hxx: New.
+	* src: New.
+	* tests/Makefile.am: New.
+	* tests/access-notifier.at: New.
+	* tests/access-notifier.cc: New.
+	* tests/atlocal.in: New.
+	* tests/package.m4.in: New.
+	* tests/simple.at: New.
+	* tests/simple.cc: New.
+	* tests/testsuite.at: New.
+	* tests/variant.at: New.
+	* tests/variant.cc: New.
+	* tests: New.
+

@@ -1,0 +1,6 @@
+                                                                 -*- outline -*-
+
+* Fix AccessNotifier/hooks (using a subclass of Settings to avoid storing
+  several times the hooks).
+
+* Write the Program_options bridge.
