@@ -1,4 +1,4 @@
 #! /bin/sh
 set -x
-mkdir libltdl
+!test -f libltdl && mkdir libltdl
 autoreconf -f -v -i

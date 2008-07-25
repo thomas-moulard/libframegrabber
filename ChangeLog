@@ -1,5 +1,27 @@
 2008-07-24  Thomas Moulard  <thomas@moulard.net>
 
+	Fix plug-in mechanism.
+	* bootstrap: Do not recreate libltdl directory.
+	* build-aux/warning.m4: Fix macro name.
+	* configure.ac: Generate null-plugin Makefile, do not generate
+        package Makefile for now.
+	* src/Makefile.am: Fix library compilation,
+        add null-plugin subdirectory.
+	* src/framegrabber-fwd.hh: Remove useless includes.
+	* src/framegrabber-plugin.hh: Fix typedef.
+	* src/framegrabber.cc: Implement plug-in mechanism.
+	* src/framegrabber.hh: Add ltdl handle, fix includes and interface.
+	* tests/Makefile.am: Compile "null-plugin" test.
+	* tests/atlocal.in: Add null-plugin build dir to the plug-in search
+        path.
+	* tests/testsuite.at: Include null-plugin test.
+	* src/null-plugin/Makefile.am: New.
+	* src/null-plugin/libframegrabber-null-plugin.cc: New.
+	* tests/null-plugin.at: New.
+	* tests/null-plugin.cc: New.
+
+2008-07-24  Thomas Moulard  <thomas@moulard.net>
+
 	Fix bootstrap.
 	* bootstrap: Create libltdl directory at bootstrap.
 

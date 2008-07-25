@@ -12,7 +12,7 @@ namespace framegrabber
   public:
     static const unsigned PLUGIN_INTERFACE_VERSION = 1;
 
-    typedef Framegrabber::size_t size_type;
+    typedef Framegrabber::size_type size_type;
     typedef Framegrabber::bufferPtr_t bufferPtr_t;
     typedef Framegrabber::fourcc_t fourcc_t;
 

@@ -36,16 +36,16 @@ rm -f conftest.$ac_objext m4_ifval([$1], [conftest.$ac_ext])[]dnl
 ])# AC_COMPILE_STDERR_IFELSE
 
 
-# LIBSETTINGS_COMPILER_FLAGS_NAME
+# LIBFRAMEGRABBER_COMPILER_FLAGS_NAME
 # ----------------------
 # Return the name of the FLAGS variable for the current language.
-m4_define([LIBSETTINGS_COMPILER_FLAGS_NAME],
+m4_define([LIBFRAMEGRABBER_COMPILER_FLAGS_NAME],
 [AC_LANG_CASE([C],   [CFLAGS],
               [C++], [CXXFLAGS])[]dnl
-])# LIBSETTINGS_COMPILER_FLAGS_NAME
+])# LIBFRAMEGRABBER_COMPILER_FLAGS_NAME
 
 
-# LIBSETTINGS_COMPILER_OPTION_IF(OPTION, [IF-SUPPORTED], [IF-NOT-SUPPORTED])
+# LIBFRAMEGRABBER_COMPILER_OPTION_IF(OPTION, [IF-SUPPORTED], [IF-NOT-SUPPORTED])
 # -----------------------------------------------------------------
 # icc doesn't choke on unknown options, it will just issue warnings
 # (even with -Werror).  So we grep stderr for any message that says an
@@ -59,13 +59,13 @@ m4_define([LIBSETTINGS_COMPILER_FLAGS_NAME],
 # cc1plus: warning: ignoring command line option '-Wbad-function-cast'
 #
 # Pay attention not to give grep a regexp starting with "-".
-AC_DEFUN([LIBSETTINGS_COMPILER_OPTION_IF],
+AC_DEFUN([LIBFRAMEGRABBER_COMPILER_OPTION_IF],
 [AS_VAR_PUSHDEF([ac_Option],
                 [ac_cv_[]_AC_LANG_ABBREV[]_supports_$1])dnl
 AC_CACHE_CHECK([whether _AC_LANG compiler accepts $1],
                [ac_Option],
-[ac_save_[]LIBSETTINGS_COMPILER_FLAGS_NAME=$LIBSETTINGS_COMPILER_FLAGS_NAME
-LIBSETTINGS_COMPILER_FLAGS_NAME="$LIBSETTINGS_COMPILER_FLAGS_NAME $1"
+[ac_save_[]LIBFRAMEGRABBER_COMPILER_FLAGS_NAME=$LIBFRAMEGRABBER_COMPILER_FLAGS_NAME
+LIBFRAMEGRABBER_COMPILER_FLAGS_NAME="$LIBFRAMEGRABBER_COMPILER_FLAGS_NAME $1"
 ac_Option=no
 AC_COMPILE_STDERR_IFELSE([AC_LANG_PROGRAM],
   [if (grep -E 'm4_do([ignoring option],
@@ -76,14 +76,14 @@ AC_COMPILE_STDERR_IFELSE([AC_LANG_PROGRAM],
       ) >/dev/null 2>&1; then :; else
       ac_Option=yes
    fi])
-LIBSETTINGS_COMPILER_FLAGS_NAME=$ac_save_[]LIBSETTINGS_COMPILER_FLAGS_NAME
+LIBFRAMEGRABBER_COMPILER_FLAGS_NAME=$ac_save_[]LIBFRAMEGRABBER_COMPILER_FLAGS_NAME
 ])
 AS_IF([test AS_VAR_GET(ac_Option) = yes], [$2], [$3])[]dnl
 AS_VAR_PUSHDEF([ac_Option])dnl
-])# LIBSETTINGS_COMPILER_OPTION_IF
+])# LIBFRAMEGRABBER_COMPILER_OPTION_IF
 
 
-# LIBSETTINGS_CXX_WARNINGS(OPTIONS)
+# LIBFRAMEGRABBER_CXX_WARNINGS(OPTIONS)
 # ------------------------
 # Check whether the C++ compiler support the OPTION, and if it
 # does, append it to WARNING_CXXFLAGS.
@@ -94,12 +94,12 @@ AS_VAR_PUSHDEF([ac_Option])dnl
 #
 # but not when used alone.  This also demonstrates the importance of the
 # order.
-AC_DEFUN([LIBSETTINGS_CXX_WARNINGS],
-[ac_save_compiler_flags=$LIBSETTINGS_COMPILER_FLAGS_NAME
+AC_DEFUN([LIBFRAMEGRABBER_CXX_WARNINGS],
+[ac_save_compiler_flags=$LIBFRAMEGRABBER_COMPILER_FLAGS_NAME
 m4_foreach([AC_Option], [$1],
-    [LIBSETTINGS_COMPILER_OPTION_IF(AC_Option,
+    [LIBFRAMEGRABBER_COMPILER_OPTION_IF(AC_Option,
            [WARNING_CXXFLAGS="$WARNING_CXXFLAGS AC_Option"
-            LIBSETTINGS_COMPILER_FLAGS_NAME="$ac_save_compiler_flags $WARNING_FLAGS"])])
-LIBSETTINGS_COMPILER_FLAGS_NAME=$ac_save_compiler_flags
+            LIBFRAMEGRABBER_COMPILER_FLAGS_NAME="$ac_save_compiler_flags $WARNING_FLAGS"])])
+LIBFRAMEGRABBER_COMPILER_FLAGS_NAME=$ac_save_compiler_flags
 AC_SUBST([WARNING_CXXFLAGS])
-])# LIBSETTINGS_CXX_WARNINGS(OPTIONS)
+])# LIBFRAMEGRABBER_CXX_WARNINGS(OPTIONS)

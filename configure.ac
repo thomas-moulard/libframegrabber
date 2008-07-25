@@ -47,8 +47,8 @@ LIBFRAMEGRABBER_CXX_WARNINGS([[-Wall],
 AC_PROG_LIBTOOL
 
 # Use ltdl.
-LT_CONFIG_LTDL_DIR([libltdl])
-LTDL_INIT([subproject])
+AC_LIB_LTDL
+AC_CONFIG_SUBDIRS(libltdl)
 
 ## ------------ ##
 ## Test-suite.  ##
@@ -66,11 +66,12 @@ AM_MISSING_PROG([AUTOM4TE], [autom4te])
 AC_CONFIG_HEADERS([config.h])
 
 # Create Makefiles.
+#   packages/Makefile
 AC_CONFIG_FILES([
   Makefile
    doc/Makefile
-   packages/Makefile
    src/Makefile
+   src/null-plugin/Makefile
    tests/Makefile
     tests/package.m4
     tests/atlocal

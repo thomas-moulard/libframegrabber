@@ -24,3 +24,6 @@
 
 # Add test binaries to PATH.
 PATH=@abs_builddir@:$PATH
+
+# Add null-plugin to plug-in search path.
+export LTDL_LIBRARY_PATH=@abs_builddir@/../src/null-plugin:$LTDL_LIBRARY_PATH
